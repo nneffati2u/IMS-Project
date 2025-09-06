@@ -1,0 +1,6 @@
+<svg width="1200" height="300" viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="300" fill="none"/>
+      <g transform="translate(600,165)">
+        <text x="0" y="0" text-anchor="middle" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto" font-size="180" font-weight="800" letter-spacing="2" fill="#FFFFFF">IMS</text>
+      </g>
+    </svg>

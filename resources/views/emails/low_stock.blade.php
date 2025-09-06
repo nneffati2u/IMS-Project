@@ -1,0 +1,1 @@
+<p>Stock low for <strong>{{ $product->name }}</strong>: {{ $stock }} units.</p>
