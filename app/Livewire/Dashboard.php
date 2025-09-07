@@ -33,7 +33,9 @@ class Dashboard extends Component
         $productsCount = Product::count();
         $alertsActive = Alert::where('current_state', 'Below')->count();
         $inventoriesDraft = Inventory::where('status', 'Draft')->count();
-        $stockValue = Product::sum('price_ht');
+        //$stockValue = Product::sum('price_ht');
+        $stockValue = Product::query()->selectRaw('SUM(price_ht * qty_theoretical) as v')->value('v');
+
         $topMovers = Movement::selectRaw('product_id, SUM(ABS(quantity)) as qty')->groupBy('product_id')->orderByDesc('qty')->with('product')->limit(5)->get();
         return view('livewire.dashboard', compact('productsCount', 'alertsActive', 'inventoriesDraft', 'stockValue', 'topMovers'))->layout('layouts.app');
     }

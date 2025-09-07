@@ -50,7 +50,7 @@ class Index extends Component
         'q' => ['except' => ''],
         'categoryId' => ['except' => null],
         'perPage' => ['except' => 10],
-        'page' => ['except' => 1], // ✅ évite l’erreur quand on clique "2"
+        'page' => ['except' => 1], // évite l’erreur quand on clique "2"
     ];
 
     public function mount(): void
@@ -133,7 +133,7 @@ class Index extends Component
             $this->loadCategories();
         }
 
-        $products = $this->queryFiltered()->paginate($this->perPage)->withQueryString(); // ✅ conserve les filtres quand on change de page
+        $products = $this->queryFiltered()->paginate($this->perPage)->withQueryString(); // conserve les filtres quand on change de page
 
         return view('livewire.products.index', [
             'products' => $products,

@@ -20,7 +20,7 @@ class Form extends Component
     public $low_stock_threshold_value = null; // float|null
     public $low_stock_threshold_percent = null; // float|null
 
-    // ⚠️ NE PAS typer en bool: Livewire envoie "0"/"1" => on garde int 0/1
+    //  NE PAS typer en bool: Livewire envoie "0"/"1" => on garde int 0/1
     public $is_threshold_percent = 1;
 
     protected $messages = [
